@@ -1,3 +1,4 @@
+
 // game-mechanics.js
 
 export const gameState = {
@@ -269,4 +270,3 @@ export const gameState = {
   export function nextBatter() {
     // Managed externally.
   }
-  

@@ -600,4 +600,3 @@ export const mlbTeams = [
       ]
     }
   ];
-  
