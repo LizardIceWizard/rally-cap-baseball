@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ken Griffey Jr. Present MLB</title>
+  <!-- Retro pixel font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="game-container">
+    <!-- Team Selection Screen -->
+    <section id="team-selection" class="screen">
+      <h1>Choose Your Teams</h1>
+      <div class="team-select">
+        <label for="home-team-select">Home Team:</label>
+        <select id="home-team-select"></select>
+      </div>
+      <div class="team-select">
+        <label for="away-team-select">Away Team:</label>
+        <select id="away-team-select"></select>
+      </div>
+      <button id="start-game-btn">Start Game</button>
+    </section>
+
+    <!-- Game Play Screen -->
+    <section id="game-play" class="screen hidden">
+      <!-- Scoreboard -->
+      <div id="scoreboard">
+        <div class="score-section">
+          <div class="team">
+            <span class="team-name" id="away-team-name"></span>
+            <span class="team-score" id="away-score">0</span>
+          </div>
+          <div class="team">
+            <span class="team-name" id="home-team-name"></span>
+            <span class="team-score" id="home-score">0</span>
+          </div>
+        </div>
+        <div class="info-section">
+          <div class="inning-info">
+            <span>Inning: </span><span id="inning">1</span>
+            <span id="half-inning">Top</span>
+          </div>
+          <div class="outs-info">
+            <span>Outs: </span><span id="outs">0</span>
+          </div>
+          <div class="count-info">
+            <span>Count: </span><span id="balls">0</span> - <span id="strikes">0</span>
+          </div>
+        </div>
+        <!-- Box Score Section -->
+        <div id="box-score" class="box-score"></div>
+        <div class="bases-section">
+          <div class="bases">
+            <div id="first-base" class="base"></div>
+            <div id="second-base" class="base"></div>
+            <div id="third-base" class="base"></div>
+          </div>
+        </div>
+        <div class="matchup-section">
+          <div>
+            <span>Pitcher: </span><span id="pitcher-name">Loading...</span>
+          </div>
+          <div>
+            <span>Batter: </span><span id="batter-name">Loading...</span>
+          </div>
+        </div>
+      </div>
+      <!-- Game Log -->
+      <div id="game-log" class="log"></div>
+      <!-- Action Buttons -->
+      <div id="action-buttons" class="actions"></div>
+    </section>
+
+    <!-- Lineup Display Section -->
+    <section id="lineup-display" class="screen hidden">
+      <h2>Batting Order</h2>
+      <div id="current-lineup"></div>
+      <div>
+        Now Batting: <span id="current-batter" class="current-batter"></span>
+      </div>
+      <div>
+        On Deck: <span id="on-deck"></span>
+      </div>
+    </section>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="game-mechanics.js"></script>
+  <script type="module" src="data.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
